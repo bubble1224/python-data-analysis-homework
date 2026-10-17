@@ -1,6 +1,6 @@
 # Python 数据分析课程作业
 
-本仓库整理《Python 数据分析》课程 Week 1–Week 4 作业，包含理论推导、可复现 Python 代码、结果文件和分析说明。
+本仓库整理《Python 数据分析》课程 Week 1–Week 5 作业，包含理论推导、可复现 Python 代码、结果文件和分析说明。
 
 ## 作业目录
 
@@ -10,6 +10,7 @@
 | Week 2 | OLS 残差性质、调整后 R²、Carseats 多元回归与 VIF | [homework-week2](homework-week2) |
 | Week 3 | 正则化回归作业 1、3、4：Ridge、Lasso、Elastic Net | [homework-week3](homework-week3) |
 | Week 4 | Kaggle Netflix 数据 Elastic Net 分析 | [homework-week4](homework-week4) |
+| Week 5 | Spambase 垃圾邮件数据的 SVM 分类 | [homework-week5](homework-week5) |
 
 ## 环境安装
 
@@ -30,6 +31,7 @@ python homework-week1/hello.py
 python homework-week2/code/carseats_regression.py
 python homework-week3/code/regularized_regression_comparison.py
 python homework-week4/code/netflix_elastic_net.py
+python homework-week5/code/spam_svm.py
 ```
 
 各实验的图表和指标会写入对应目录下的 `results/`。数据下载缓存位于 Week 4 的 `data/`，已通过 `.gitignore` 排除，避免把外部原始数据重复提交到仓库。
@@ -48,6 +50,12 @@ python homework-week4/code/netflix_elastic_net.py
 
 详细分析见 [homework-week4/analysis.md](homework-week4/analysis.md)。
 
+## Week 5 作业说明
+
+使用课件 SVM 案例①的 **Spambase** 垃圾邮件数据（OpenML `data_id=44`，4601 封邮件 × 57 个特征），在标准化 Pipeline 内对比线性核、RBF 核 SVM 与逻辑回归：线性核与 RBF 核分别用 5 抝分层交叉验证网格搜索 `C`（及 `gamma`），报告测试集准确率、ROC AUC 与支持向量个数，并讨论高维文本数据上线性核已足够、以及 KKT 互补松弛带来的稀疏性。
+
+详细分析见 [homework-week5/analysis.md](homework-week5/analysis.md)。
+
 ## 目录结构
 
 ```text
@@ -62,8 +70,12 @@ python homework-week4/code/netflix_elastic_net.py
 │   ├── theory.md
 │   ├── code/regularized_regression_comparison.py
 │   └── results/
-└── homework-week4/
+├── homework-week4/
+│   ├── analysis.md
+│   ├── code/netflix_elastic_net.py
+│   └── results/
+└── homework-week5/
     ├── analysis.md
-    ├── code/netflix_elastic_net.py
+    ├── code/spam_svm.py
     └── results/
 ```
